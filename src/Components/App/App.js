@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import logo from '../../logo.svg';
 import './App.css';
+import Home from '../Home/Home';
+import UserList from '../UserList/UserList';
 import {
   BrowserRouter as Router,
   Route,
@@ -20,10 +22,15 @@ class App extends Component {
             <ul>
               <li><Link to="/">Home</Link></li>
               <li><Link to="/users">Users</Link></li>
-              <li><Link to="/posts">Posts</Link></li>
-              <li><Link to="/photos">Photos</Link></li>
+              {/* <li><Link to="/posts">Posts</Link></li> */}
+              {/* <li><Link to="/photos">Photos</Link></li> */}
             </ul>
           </nav>
+          
+          <Route exact path="/" component={Home} />
+          <Route path="/users" component={UserList} />
+          {/* <Route path="/posts" component={Users} /> */}
+
         </div>
       </Router>
     );

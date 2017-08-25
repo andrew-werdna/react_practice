@@ -26,6 +26,7 @@
 .main-nav {
   padding: 10px; 
   background-color: rgba(97,218,251, 0.5);
+  border-bottom: 1px solid #000000;
 }
 
 .main-nav ul {
