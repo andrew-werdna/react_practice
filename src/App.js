@@ -10,12 +10,22 @@ import {
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>My First React App</h2>
+      <Router>
+        <div className="App">
+          <div className="App-header">
+            <img src={logo} className="App-logo" alt="logo" />
+            <h2>My First React App</h2>
+          </div>
+          <nav className="main-nav">
+            <ul>
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="/users">Users</Link></li>
+              <li><Link to="/posts">Posts</Link></li>
+              <li><Link to="/photos">Photos</Link></li>
+            </ul>
+          </nav>
         </div>
-      </div>
+      </Router>
     );
   }
 }
