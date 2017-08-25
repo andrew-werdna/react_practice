@@ -28,7 +28,9 @@ class App extends Component {
           </nav>
           
           <Route exact path="/" component={Home} />
-          <Route path="/users" component={UserList} />
+          <Route path="/users" render={
+            props => ( <UserList endpoint={this.props.api.users} />) 
+          } />
           {/* <Route path="/posts" component={Users} /> */}
 
         </div>
