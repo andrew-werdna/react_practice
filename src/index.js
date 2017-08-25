@@ -14,5 +14,8 @@ const endpoints = {
   "albums": `${baseUri}/albums`,
 };
 
-ReactDOM.render(<App api={endpoints}/>, document.getElementById('root'));
+ReactDOM.render(
+  <App api={endpoints}/>, 
+  document.getElementById('root')
+);
 registerServiceWorker();
