@@ -14,7 +14,7 @@ class UserList extends Component {
     this.getUsers();
   }
   getUsers() {
-    axios.get(this.props.endpoint)
+    axios.get(this.props.api.users)
       .then(_users => {
         this.setState({
           users: _users.data

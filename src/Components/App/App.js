@@ -23,13 +23,12 @@ class App extends Component {
               <li><Link to="/">Home</Link></li>
               <li><Link to="/users">Users</Link></li>
               {/* <li><Link to="/posts">Posts</Link></li> */}
-              {/* <li><Link to="/photos">Photos</Link></li> */}
             </ul>
           </nav>
           
           <Route exact path="/" component={Home} />
           <Route path="/users" render={
-            props => ( <UserList endpoint={this.props.api.users} />) 
+            props => ( <UserList api={this.props.api} />) 
           } />
           {/* <Route path="/posts" component={Users} /> */}
 
