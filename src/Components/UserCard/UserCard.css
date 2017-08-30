@@ -7,6 +7,9 @@
   margin: 30px;
   padding: 10px;
 }
+.user-card:hover {
+  cursor: pointer;
+}
 .user-card-image img {
   max-width: 50%;
   margin: 10px auto;
