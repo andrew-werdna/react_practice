@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import User from '../User/User';
+import UserCard from '../UserCard/UserCard';
 
 class UserList extends Component {
   constructor(props) {
@@ -24,12 +24,16 @@ class UserList extends Component {
   render() {
     return (
       <div className="users-container">
-        <h2>Users</h2>
+        <h2>&nbsp;</h2>
         {
           this.state.users.map(
             (user) => {
               return (
-                <User key={user.name} data={user} />
+                <UserCard key={user.name} data={{
+                  name: user.name,
+                  image: user.profile_image,
+                  email: user.email
+                }} />
               );
             }
           )

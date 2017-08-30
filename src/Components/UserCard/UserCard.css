@@ -1,0 +1,17 @@
+.user-card {
+  max-width: 25%;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  box-shadow: 3px 3px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  margin: 30px;
+  padding: 10px;
+}
+.user-card-image img {
+  max-width: 50%;
+  margin: 10px auto;
+}
+.user-card-name,
+.user-card-email {
+  margin: 5px auto;
+}
