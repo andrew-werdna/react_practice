@@ -16,9 +16,9 @@ class UserList extends Component {
   getUsers() {
     axios.get(this.props.api.users)
       .then(_users => {
-        this.setState({
-          users: _users.data
-        });
+        let nState = Object.assign({}, this.state);
+        nState.users = _users.data;
+        this.setState(nState);
       });
   }
   render() {
@@ -29,7 +29,8 @@ class UserList extends Component {
           this.state.users.map(
             (user) => {
               return (
-                <UserCard key={user.name} data={{
+                <UserCard api={this.props.api} key={user.name} data={{
+                  id: user.id,
                   name: user.name,
                   image: user.profile_image,
                   email: user.email
