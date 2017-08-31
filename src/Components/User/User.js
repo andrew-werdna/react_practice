@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './User.css';
+import { Link } from 'react-router-dom';
 
 class User extends Component {
   constructor(props) {
@@ -18,7 +19,6 @@ class User extends Component {
   }
   getUser() {
     let uri = `${this.props.api.users}/${this.props.match.params.id}`;
-    console.log(uri);
     axios.get(uri)
       .then(_user => {
         let nState = Object.assign({}, this.state);
@@ -29,7 +29,7 @@ class User extends Component {
   }
   parseSimpleValues(propName) {
     if ( propName === 'id' || propName === 'profile_image' ) {
-      return;
+      return null;
     }
     let _key = "user_" + propName + this.state.user.id;
     return (
@@ -52,7 +52,7 @@ class User extends Component {
             Object.keys(this.state.user[propName]).map((nPropName) => {
               let _key = propName + '_' + nPropName;
               if ( nPropName === 'geo' ) {
-                return;
+                return null;
               }
               return (
                 <div key={_key} className="user-info-nested">
@@ -77,6 +77,9 @@ class User extends Component {
           <img alt={this.state.loading ? "" : this.state.user.name} src={this.state.loading ? "" : this.state.user['profile_image'].length ? this.state.user.profile_image : "/images/profile.png"} />
         </div>
         <div className="user-info-container">
+          <div className="post-link">
+            <Link to={`/users/${this.state.user.id}/posts`}>See Posts By This User</Link>
+          </div>
           {
             Object.keys(this.state.user).map((propName) => {
               if ( (/string|number|boolean/).test(typeof this.state.user[propName]) ) {
