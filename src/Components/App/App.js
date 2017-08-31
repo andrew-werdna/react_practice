@@ -3,6 +3,7 @@ import logo from '../../logo.svg';
 import './App.css';
 import Home from '../Home/Home';
 import UserList from '../UserList/UserList';
+import User from '../User/User';
 import {
   BrowserRouter as Router,
   Route,
@@ -27,8 +28,11 @@ class App extends Component {
           </nav>
           
           <Route exact path="/" component={Home} />
-          <Route path="/users" render={
-            props => ( <UserList api={this.props.api} />) 
+          <Route path="/users/:id" render={
+            props => ( <User api={this.props.api} {...props} /> )
+          } />
+          <Route exact path="/users" render={
+            props => ( <UserList api={this.props.api} /> ) 
           } />
           {/* <Route path="/posts" component={Users} /> */}
 
