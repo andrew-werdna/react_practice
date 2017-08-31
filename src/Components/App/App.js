@@ -4,6 +4,7 @@ import './App.css';
 import Home from '../Home/Home';
 import UserList from '../UserList/UserList';
 import User from '../User/User';
+import PostList from '../PostList/PostList';
 import {
   BrowserRouter as Router,
   Route,
@@ -28,8 +29,11 @@ class App extends Component {
           </nav>
           
           <Route exact path="/" component={Home} />
-          <Route path="/users/:id" render={
+          <Route exact path="/users/:id" render={
             props => ( <User api={this.props.api} {...props} /> )
+          } />
+          <Route exact path="/users/:id/posts" render={
+            props => ( <PostList api={this.props.api} {...props} /> )
           } />
           <Route exact path="/users" render={
             props => ( <UserList api={this.props.api} /> ) 
