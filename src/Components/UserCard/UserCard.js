@@ -25,7 +25,7 @@ class UserCard extends Component {
     return (
       <div onClick={this.handleClick} className="user-card">
         <div className="user-card-image">
-          <img alt={this.props.data.name} src={this.props.data.image.length ? this.props.data.image.length : "images/profile.png" } />
+          <img alt={this.props.data.name} src={this.props.data.image.length ? this.props.data.image.length : "/images/profile.png" } />
         </div>
         <div className="user-card-details">
           <div className="user-card-name">
