@@ -34,7 +34,12 @@ class App extends Component {
           <Route exact path="/users" render={
             props => ( <UserList api={this.props.api} /> ) 
           } />
-          {/* <Route path="/posts" component={Users} /> */}
+          {/* <Route path="/posts/:id" render={
+            props => ( <Post api={this.props.api} {...props} /> ) 
+          } />
+          <Route exact path="/posts" render={
+            props => ( <PostList api={this.props.api} /> ) 
+          } /> */}
 
         </div>
       </Router>
