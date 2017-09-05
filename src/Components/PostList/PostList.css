@@ -1,0 +1,15 @@
+.post-container {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  box-shadow: 3px 4px 5px;
+  width: 50%;
+  margin: 30px auto;
+  padding: 30px;
+  text-align: left;
+}
+.post-container .userId span {
+  font-weight: bold;
+}
+.post-container .post-title {
+  font-size: 1.1em;
+}
