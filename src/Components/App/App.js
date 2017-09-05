@@ -40,10 +40,10 @@ class App extends Component {
           } />
           {/* <Route path="/posts/:id" render={
             props => ( <Post api={this.props.api} {...props} /> ) 
-          } />
+          } /> */}
           <Route exact path="/posts" render={
             props => ( <PostList api={this.props.api} /> ) 
-          } /> */}
+          } />
 
         </div>
       </Router>
