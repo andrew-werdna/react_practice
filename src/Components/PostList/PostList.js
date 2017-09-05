@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import './PostList.css';
 
 class PostList extends Component {
   constructor(props) {
@@ -14,7 +15,13 @@ class PostList extends Component {
     this.getPosts();
   }
   getPosts() {
-    let uri = `${this.props.api.posts}?userId=${this.props.match.params.id}`;
+    let uri;
+    if ( this.props.match ) {
+      uri = `${this.props.api.posts}?userId=${this.props.match.params.id}`;
+    }
+    else {
+      uri = `${this.props.api.posts}`;
+    }
     axios.get(uri)
       .then(_posts => {
         let nState = Object.assign({}, this.state);
@@ -25,7 +32,26 @@ class PostList extends Component {
   }
   render() {
     return (
-      <div>{JSON.stringify(this.state)}</div>
+      <div className="post-list">
+        {
+          this.state.posts.map((post) => {
+            let k = `${post.title}_${post.id}`;
+            return (
+              <div key={k} className="post-container">
+                <div className="userId">
+                  <span>User ID:</span> {post.userId}
+                </div>
+                <div className="post-title">
+                  <h2>{post.title}</h2>
+                </div>
+                <div className="post-body">
+                  {post.body}
+                </div>
+              </div>
+            );
+          })
+        }
+      </div>
     );
   }
 }
