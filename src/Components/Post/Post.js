@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Redirect } from 'react-router-dom';
 import './Post.css';
 
 class Post extends Component {
@@ -30,15 +29,11 @@ class Post extends Component {
       <div className="post">
         <div className="post-title">
           <h1>
-            {
-              this.state.loading ? '' : this.state.post.title
-            }
+            { this.state.loading ? '' : this.state.post.title }
           </h1>
         </div>
         <div className="post-body">
-          {
-            this.state.loading ? '' : this.state.post.body
-          }
+          { this.state.loading ? '' : this.state.post.body }
         </div>
       </div>
     );
