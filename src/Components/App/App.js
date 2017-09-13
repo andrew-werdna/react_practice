@@ -6,6 +6,7 @@ import UserList from '../UserList/UserList';
 import User from '../User/User';
 import PostList from '../PostList/PostList';
 import Post from '../Post/Post';
+import TodoList from '../TodoList/TodoList';
 import {
   BrowserRouter as Router,
   Route,
@@ -26,6 +27,7 @@ class App extends Component {
               <li><Link to="/">Home</Link></li>
               <li><Link to="/users">Users</Link></li>
               <li><Link to="/posts">Posts</Link></li>
+              <li><Link to="/todos">Todos</Link></li>
             </ul>
           </nav>
           
@@ -36,15 +38,15 @@ class App extends Component {
           <Route exact path="/users/:id/posts" render={
             props => ( <PostList api={this.props.api} {...props} /> )
           } />
-          {/* <Route exact path="/users/:id/todos" render={
+          <Route exact path="/users/:id/todos" render={
             props => ( <TodoList api={this.props.api} {...props} /> )
           } />
-          <Route exact path="/todos/:id" render={
+          {/* <Route exact path="/todos/:id" render={
             props => ( <Todo api={this.props.api} {...props} /> )
-          } />
+          } /> */}
           <Route exact path="/todos" render={
             props => ( <TodoList api={this.props.api} /> )
-          } /> */}
+          } />
           <Route exact path="/users" render={
             props => ( <UserList api={this.props.api} /> ) 
           } />
