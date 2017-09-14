@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+import './TodoList.css';
 
 class TodoList extends Component {
   constructor(props) {
@@ -33,19 +35,20 @@ class TodoList extends Component {
     return (
       <div className="todos-container">
         <div className="todo-row">
-          <div className="todo-userID">User</div>
-          <div className="todo-title">Title</div>
-          <div className="todo-completed">Status</div>
+          <div className="todo-userID header">User</div>
+          <div className="todo-title header">Title</div>
+          <div className="todo-completed header">Status</div>
         </div>
         {
           this.state.todos.map(
             (todo) => {
               let k = `${todo.title}_${todo.id}`;
+              let userLink = `/users/${todo.userId}`;
               return (
-                <div className="todo-row">
-                  <div className="todo-userID">{todo.userId}</div>
+                <div key={k} className="todo-row">
+                  <div className="todo-userID"><Link to={userLink}>view user</Link></div>
                   <div className="todo-title">{todo.title}</div>
-                  <div className="todo-completed">{todo.completed.toString()}</div>
+                  <div className="todo-completed">{todo.completed ? "COMPLETE" : "In Progress"}</div>
                 </div>
               );
             }

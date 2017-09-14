@@ -1,0 +1,33 @@
+.todos-container {
+  max-width: 75%;
+  margin: 30px auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.todo-row {
+  display: flex;
+  text-align: left;
+}
+
+.todo-userID,
+.todo-title,
+.todo-completed {
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.todo-userID,
+.todo-completed {
+  flex-basis: 10%;
+}
+
+.todo-title {
+  flex-basis: 80%;
+}
+
+.todo-userID.header,
+.todo-title.header,
+.todo-completed.header {
+  font-weight: bold;
+}

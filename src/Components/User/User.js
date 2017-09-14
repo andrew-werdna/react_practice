@@ -80,6 +80,9 @@ class User extends Component {
           <div className="post-link">
             <Link to={`/users/${this.state.user.id}/posts`}>See Posts By This User</Link>
           </div>
+          <div className="todo-link">
+            <Link to={`/users/${this.state.user.id}/todos`}>See Todos By This User</Link>
+          </div>
           {
             Object.keys(this.state.user).map((propName) => {
               if ( (/string|number|boolean/).test(typeof this.state.user[propName]) ) {
