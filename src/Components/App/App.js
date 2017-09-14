@@ -41,9 +41,6 @@ class App extends Component {
           <Route exact path="/users/:id/todos" render={
             props => ( <TodoList api={this.props.api} {...props} /> )
           } />
-          {/* <Route exact path="/todos/:id" render={
-            props => ( <Todo api={this.props.api} {...props} /> )
-          } /> */}
           <Route exact path="/todos" render={
             props => ( <TodoList api={this.props.api} /> )
           } />
