@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import logo from '../../logo.svg';
 import './App.css';
-import Home from '../Home/Home';
 import UserList from '../UserList/UserList';
 import User from '../User/User';
 import PostList from '../PostList/PostList';
@@ -10,7 +9,8 @@ import TodoList from '../TodoList/TodoList';
 import {
   BrowserRouter as Router,
   Route,
-  Link
+  Link,
+  Redirect
 } from 'react-router-dom';
 
 class App extends Component {
@@ -24,14 +24,15 @@ class App extends Component {
           </div>
           <nav className="main-nav">
             <ul>
-              <li><Link to="/">Home</Link></li>
               <li><Link to="/users">Users</Link></li>
               <li><Link to="/posts">Posts</Link></li>
               <li><Link to="/todos">Todos</Link></li>
             </ul>
           </nav>
           
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" render={
+            props => ( <Redirect to='/users' /> )
+          } />
           <Route exact path="/users/:id" render={
             props => ( <User api={this.props.api} {...props} /> )
           } />
