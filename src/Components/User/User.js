@@ -83,6 +83,7 @@ class User extends Component {
           <div className="todo-link">
             <Link to={`/users/${this.state.user.id}/todos`}>See Todos By This User</Link>
           </div>
+          <div className="user-info">
           {
             Object.keys(this.state.user).map((propName) => {
               if ( (/string|number|boolean/).test(typeof this.state.user[propName]) ) {
@@ -91,6 +92,7 @@ class User extends Component {
               return this.parseNestedObject(propName);
             })
           }
+          </div>
         </div>
       </div>
     );

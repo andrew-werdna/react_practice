@@ -7,12 +7,12 @@
   padding: 30px;
   text-align: left;
 }
-.post-container .userId:hover,
+.post-container .userId span:hover,
 .post-container .post-title {
   cursor: pointer;
 }
 .post-container .userId {
-  width: 10%;
+  width: 15%;
 }
 .post-container .userId span {
   font-weight: bold;

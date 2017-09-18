@@ -45,11 +45,11 @@ class PostCard extends Component {
     }
     return (
       <div className="post-container">
-        <div onClick={() => this.handleUserClick(this.props.data.userId)} className="userId">
-          <span>User ID:</span> {this.props.data.userId}
+        <div className="userId">
+          <span onClick={() => this.handleUserClick(this.props.data.userId)}>User ID:</span> {this.props.data.userId}
         </div>
-        <div onClick={() => this.handlePostClick(this.props.data.id)} className="post-title">
-          <h2>{this.props.data.title}</h2>
+        <div className="post-title">
+          <h2 onClick={() => this.handlePostClick(this.props.data.id)}>{this.props.data.title}</h2>
         </div>
         <div className="post-body">
           {this.props.data.body}
