@@ -1,3 +1,15 @@
+Once you have cloned this and done yarn install, be sure to start both the development server AND the api server
+
+![start_it](https://user-images.githubusercontent.com/8261769/30569927-7559461c-9ca3-11e7-962c-915f6cce14d6.png)
+
+Now, as you navigate, you will be able to see the API data rendered into several views
+
+![users](https://user-images.githubusercontent.com/8261769/30569925-723006f6-9ca3-11e7-9a41-7f7dfb11bbfb.png)
+
+![user](https://user-images.githubusercontent.com/8261769/30569911-60f81446-9ca3-11e7-8294-be831f64b57b.png)
+
+![posts](https://user-images.githubusercontent.com/8261769/30569920-6d20c704-9ca3-11e7-8db5-743b4ac702a0.png)
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
